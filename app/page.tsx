@@ -157,7 +157,7 @@ export default function Home() {
                   95+
                 </div>
               </div>
-              <p className="font-mono text-[10px] leading-relaxed text-muted mt-8 uppercase tracking-wider opacity-60">
+              <p className="font-mono text-[10px] leading-relaxed text-muted mt-8 uppercase tracking-wider opacity-90">
                 Google PageSpeed optimization for maximum retention.
               </p>
             </div>
@@ -170,7 +170,7 @@ export default function Home() {
               <p className="font-mono text-[11px] text-white uppercase tracking-[0.2em] mb-1 font-bold">
                 Secure by Design
               </p>
-              <p className="font-mono text-[9px] text-muted uppercase tracking-widest opacity-50">
+              <p className="font-mono text-[9px] text-muted uppercase tracking-widest opacity-90">
                 Security-checked before every launch
               </p>
             </div>

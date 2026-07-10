@@ -19,7 +19,7 @@ export default function Footer() {
                 Es-Soussy
               </span>
             </div>
-            <p className="text-body text-muted opacity-70">
+            <p className="text-body text-muted">
               Full-stack web developer. From idea to live product — design,
               build, launch, and stay.
             </p>

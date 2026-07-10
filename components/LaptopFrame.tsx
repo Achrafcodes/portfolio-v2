@@ -27,7 +27,7 @@ export default function LaptopFrame({
             src={src}
             alt={alt}
             fill
-            unoptimized
+            quality={100}
             className="object-cover object-top"
             sizes={sizes}
             priority={priority}
