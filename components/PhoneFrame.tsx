@@ -34,7 +34,7 @@ export default function PhoneFrame({
               src={src}
               alt={alt}
               fill
-              quality={100}
+              unoptimized
               className="object-cover object-top"
               sizes={sizes}
             />

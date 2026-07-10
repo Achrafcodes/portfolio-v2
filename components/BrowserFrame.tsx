@@ -46,7 +46,7 @@ export default function BrowserFrame({
           src={src}
           alt={alt}
           fill
-          quality={100}
+          unoptimized
           className="object-cover object-top"
           sizes={sizes}
           priority={priority}
