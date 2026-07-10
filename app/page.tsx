@@ -101,7 +101,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="premium-glow group bg-signal text-on-signal px-6 sm:px-10 py-4 sm:py-5 font-mono text-[12px] sm:text-[13px] rounded-full hover:shadow-[0_0_30px_rgba(255,159,28,0.3)] active:scale-95 transition-all flex items-center gap-3 font-bold tracking-widest uppercase"
               >
-                Start Your Project
+                Get in Touch
                 <ArrowRight className="size-[18px] group-hover:translate-x-1 transition-transform" />
               </a>
               <a
