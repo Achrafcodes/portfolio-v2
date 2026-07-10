@@ -100,7 +100,7 @@ export const projects: Project[] = [
       },
     ],
     heroImage: "/hustl/screencapture-hustl-ivory-vercel-app-2026-07-07-02_54_52.png",
-    mobileImage: "/hustl/screencapture-hustl-ivory-vercel-app-jobs-2026-07-07-02_58_20.png",
+    mobileImage: "/hustl/screencapture-hustl-ivory-vercel-app-2026-07-10-03_40_41.png",
     gallery: [
       {
         src: "/hustl/screencapture-hustl-ivory-vercel-app-jobs-2026-07-07-02_55_18.png",
