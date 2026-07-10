@@ -66,18 +66,23 @@ export default function Home() {
             </div>
 
             <h1
-              className="reveal-blur text-display max-w-5xl leading-[0.95] tracking-[-0.05em] mb-8"
+              className="reveal-blur text-display max-w-5xl leading-[0.95] tracking-[-0.05em] mb-6"
               style={display}
+            >
+              Achraf Es-Soussy<span className="text-signal">.</span>
+            </h1>
+            <p
+              className="reveal-blur text-title max-w-4xl leading-tight mb-8"
+              style={{ ...display, fontWeight: 600 }}
             >
               From Idea to{" "}
               <span className="text-gradient font-extrabold italic">
                 Live Product.
-              </span>
-              <br />
-              <span className="font-light opacity-90">
+              </span>{" "}
+              <span className="font-light opacity-80">
                 Fast, Secure, &amp; Built to Scale.
               </span>
-            </h1>
+            </p>
 
             <p className="reveal-up text-lede text-muted max-w-2xl mx-auto mb-12 opacity-90">
               I design, build, and launch high-performance web platforms that
