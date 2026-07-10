@@ -67,10 +67,10 @@ export default function Home() {
             </div>
 
             <h1
-              className="reveal-blur text-display max-w-5xl leading-[0.95] tracking-[-0.05em] mb-5"
+              className="reveal-blur whitespace-nowrap text-[clamp(30px,6.2vw,80px)] leading-[0.95] tracking-[-0.04em] mb-5"
               style={display}
             >
-              Achraf <span className="whitespace-nowrap">Es-Soussy<span className="text-signal">.</span></span>
+              Achraf Es-Soussy
             </h1>
             <p className="reveal-fade font-mono text-[12px] sm:text-[13px] uppercase tracking-[0.35em] text-signal mb-7">
               Full-Stack Web Developer
