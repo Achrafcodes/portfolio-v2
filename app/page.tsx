@@ -4,6 +4,8 @@ import PhoneFrame from "@/components/PhoneFrame";
 import AuroraBackground from "@/components/AuroraBackground";
 import { projects } from "@/lib/projects";
 import { testimonials } from "@/lib/testimonials";
+import ContactActions from "@/components/ContactActions";
+import { ArrowRight, ArrowUpRight, Rocket, ShieldCheck, Star as StarIcon } from "@/components/icons";
 
 const display = { fontFamily: 'var(--font-hanken), "Hanken Grotesk", sans-serif' };
 
@@ -41,14 +43,7 @@ const steps = [
 ];
 
 function Star() {
-  return (
-    <span
-      className="material-symbols-outlined text-[16px] text-signal"
-      style={{ fontVariationSettings: "'FILL' 1" }}
-    >
-      star
-    </span>
-  );
+  return <StarIcon className="size-4 text-signal" />;
 }
 
 export default function Home() {
@@ -96,18 +91,14 @@ export default function Home() {
                 className="premium-glow group bg-signal text-on-signal px-6 sm:px-10 py-4 sm:py-5 font-mono text-[12px] sm:text-[13px] rounded-full hover:shadow-[0_0_30px_rgba(255,159,28,0.3)] active:scale-95 transition-all flex items-center gap-3 font-bold tracking-widest uppercase"
               >
                 Start Your Project
-                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform text-[18px]">
-                  arrow_forward
-                </span>
+                <ArrowRight className="size-[18px] group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="#work"
                 className="glass-card text-ink px-6 sm:px-10 py-4 sm:py-5 font-mono text-[12px] sm:text-[13px] rounded-full hover:bg-white/10 transition-all flex items-center gap-3 font-bold tracking-widest uppercase"
               >
                 View Case Studies
-                <span className="material-symbols-outlined text-[18px]">
-                  arrow_outward
-                </span>
+                <ArrowUpRight className="size-[18px]" />
               </a>
             </div>
           </div>
@@ -124,9 +115,7 @@ export default function Home() {
                   <span className="text-stat text-white" style={display}>
                     03
                   </span>
-                  <span className="material-symbols-outlined text-signal text-[20px] animate-pulse">
-                    rocket_launch
-                  </span>
+                  <Rocket className="size-5 text-signal animate-pulse" />
                 </div>
               </div>
               <ul className="mt-8 space-y-3">
@@ -139,9 +128,7 @@ export default function Home() {
                       className="flex items-center justify-between font-mono text-[10px] text-muted uppercase group/item hover:text-white transition-colors"
                     >
                       <span>{p.name}</span>
-                      <span className="material-symbols-outlined text-[14px] opacity-30 group-hover/item:opacity-100 transition-opacity">
-                        arrow_forward
-                      </span>
+                      <ArrowRight className="size-3.5 opacity-30 group-hover/item:opacity-100 transition-opacity" />
                     </a>
                   </li>
                 ))}
@@ -167,12 +154,7 @@ export default function Home() {
             {/* Security */}
             <div className="reveal-scale glass-card p-8 rounded-2xl flex flex-col items-center justify-center text-center border-white/10">
               <div className="size-16 bg-white/5 rounded-full flex items-center justify-center mb-4 border border-white/10">
-                <span
-                  className="material-symbols-outlined text-signal text-[28px]"
-                  style={{ fontVariationSettings: "'FILL' 1" }}
-                >
-                  verified_user
-                </span>
+                <ShieldCheck className="size-7 text-signal" />
               </div>
               <p className="font-mono text-[11px] text-white uppercase tracking-[0.2em] mb-1 font-bold">
                 Secure by Design
@@ -290,9 +272,7 @@ export default function Home() {
                     className="inline-flex items-center gap-2 font-mono text-label uppercase border border-signal text-signal px-6 py-3 rounded-full hover:bg-signal hover:text-on-signal transition-colors duration-300 font-bold tracking-widest"
                   >
                     Try it live
-                    <span className="material-symbols-outlined text-[16px]">
-                      arrow_outward
-                    </span>
+                    <ArrowUpRight className="size-4" />
                   </a>
                   <Link
                     href={`/work/${p.slug}`}
@@ -376,13 +356,8 @@ export default function Home() {
           <p className="font-mono text-label uppercase text-faint mb-10">
             Free · no obligation · no sales pitch
           </p>
-          <a
-            href="mailto:achrafcodes99@gmail.com"
-            className="premium-glow inline-flex items-center gap-3 bg-signal text-on-signal font-mono text-[12px] sm:text-[13px] uppercase px-6 sm:px-10 py-4 sm:py-5 rounded-full hover:shadow-[0_0_30px_rgba(255,159,28,0.3)] transition-all font-bold tracking-widest"
-          >
-            achrafcodes99@gmail.com
-          </a>
-          <p className="font-mono text-label uppercase text-muted mt-6">
+          <ContactActions />
+          <p className="font-mono text-label uppercase text-muted mt-8">
             Prefer to talk?{" "}
             <a
               href="tel:+212706389418"
