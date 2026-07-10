@@ -47,8 +47,8 @@ export const projects: Project[] = [
         body: "Income vs. expense trend, spending-by-category donut, KPI cards — all server-rendered.",
       },
     ],
-    heroImage: "/reckon/screencapture-reckon-kappa-vercel-app-dashboard-2026-07-07-02_49_18.png",
-    mobileImage: "/reckon/screencapture-reckon-kappa-vercel-app-dashboard-2026-07-07-02_51_34.png",
+    heroImage: "/reckon/screencapture-reckon-kappa-vercel-app-dashboard-2026-07-07-02_53_07.png",
+    mobileImage: "/reckon/screencapture-reckon-kappa-vercel-app-dashboard-2026-07-07-02_52_29.png",
     gallery: [
       {
         src: "/reckon/screencapture-reckon-kappa-vercel-app-analytics-2026-07-07-02_50_25.png",
