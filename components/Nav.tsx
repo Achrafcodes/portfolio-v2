@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Logo from "@/components/Logo";
+import { site } from "@/lib/site";
 
 const links = [
   { href: "/#work", label: "Work" },
@@ -39,7 +40,9 @@ export default function Nav() {
               </Link>
             ))}
             <a
-              href="mailto:achrafcodes99@gmail.com"
+              href={site.gmailCompose}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-black px-6 py-2 font-mono text-[11px] rounded-full hover:bg-signal hover:text-on-signal transition-all active:scale-95 font-bold uppercase tracking-widest"
             >
               Get a Quote
@@ -92,7 +95,9 @@ export default function Nav() {
             </Link>
           ))}
           <a
-            href="mailto:achrafcodes99@gmail.com"
+            href={site.gmailCompose}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className={`mt-8 inline-flex w-fit items-center gap-3 bg-signal text-on-signal px-8 py-4 font-mono text-[12px] rounded-full font-bold tracking-widest uppercase transition-all duration-500 ${
               open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
@@ -109,7 +114,9 @@ export default function Nav() {
           style={{ transitionDelay: open ? "500ms" : "0ms" }}
         >
           <a
-            href="mailto:achrafcodes99@gmail.com"
+            href={site.gmailCompose}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-mono text-label uppercase text-muted"
           >
             achrafcodes99@gmail.com

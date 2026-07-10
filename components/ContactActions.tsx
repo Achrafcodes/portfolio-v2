@@ -4,10 +4,7 @@ import { useState } from "react";
 import { site } from "@/lib/site";
 import { ArrowUpRight } from "@/components/icons";
 
-const WHATSAPP = "https://wa.me/212706389418?text=Hi%20Achraf%2C%20I%20have%20a%20project%20in%20mind";
-const GMAIL_COMPOSE = `https://mail.google.com/mail/?view=cm&fs=1&to=${site.email}&su=${encodeURIComponent(
-  "Project inquiry"
-)}`;
+
 
 export default function ContactActions() {
   const [copied, setCopied] = useState(false);
@@ -27,7 +24,7 @@ export default function ContactActions() {
     <div className="flex flex-col items-center gap-5">
       <div className="flex flex-wrap items-center justify-center gap-4">
         <a
-          href={GMAIL_COMPOSE}
+          href={site.gmailCompose}
           target="_blank"
           rel="noopener noreferrer"
           className="premium-glow inline-flex items-center gap-3 bg-signal text-on-signal font-mono text-[12px] sm:text-[13px] uppercase px-6 sm:px-10 py-4 sm:py-5 rounded-full font-bold tracking-widest hover:shadow-[0_0_30px_rgba(255,159,28,0.3)] active:scale-95 transition-all"
@@ -36,7 +33,7 @@ export default function ContactActions() {
           <ArrowUpRight className="size-4" />
         </a>
         <a
-          href={WHATSAPP}
+          href={site.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
           className="glass-card inline-flex items-center gap-3 text-ink font-mono text-[12px] sm:text-[13px] uppercase px-6 sm:px-10 py-4 sm:py-5 rounded-full font-bold tracking-widest hover:bg-white/10 active:scale-95 transition-all"

@@ -7,4 +7,8 @@ export const site = {
   email: "achrafcodes99@gmail.com",
   github: "https://github.com/Achrafcodes",
   location: "Kenitra, Morocco",
+  gmailCompose:
+    "https://mail.google.com/mail/?view=cm&fs=1&to=achrafcodes99@gmail.com&su=Project%20inquiry",
+  whatsapp:
+    "https://wa.me/212706389418?text=Hi%20Achraf%2C%20I%20have%20a%20project%20in%20mind",
 };
