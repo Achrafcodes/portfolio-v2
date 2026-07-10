@@ -19,7 +19,7 @@
   --color-live-dim: #005142;
 
   /* Typography — Hanken Grotesk / Inter / JetBrains Mono */
-  --font-display: var(--font-hanken), "Hanken Grotesk", sans-serif;
+  --font-display: var(--font-syne), "Syne", sans-serif;
   --font-body: var(--font-inter), "Inter", sans-serif;
   --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
 
@@ -118,6 +118,32 @@ section[id] {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+}
+
+/* Loading intro */
+@keyframes intro-pop {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.intro-pop {
+  animation: intro-pop 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes intro-sweep {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.intro-sweep {
+  animation: intro-sweep 1s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 /* ============ Reveal system ============

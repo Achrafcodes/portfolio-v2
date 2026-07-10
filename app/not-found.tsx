@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "@/components/icons";
 
-const display = { fontFamily: 'var(--font-hanken), "Hanken Grotesk", sans-serif' };
+const display = { fontFamily: 'var(--font-syne), "Syne", sans-serif' };
 
 export default function NotFound() {
   return (

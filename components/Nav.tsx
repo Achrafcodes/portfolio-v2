@@ -11,7 +11,7 @@ const links = [
   { href: "/#contact", label: "Contact" },
 ];
 
-const display = { fontFamily: 'var(--font-hanken), "Hanken Grotesk", sans-serif' };
+const display = { fontFamily: 'var(--font-syne), "Syne", sans-serif' };
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -72,7 +72,7 @@ export default function Nav() {
 
       {/* Full-screen mobile menu */}
       <div
-        className={`md:hidden fixed inset-0 z-40 bg-canvas flex flex-col transition-opacity duration-400 ${
+        className={`md:hidden fixed inset-0 z-40 bg-canvas flex flex-col transition-opacity duration-300 ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         aria-hidden={!open}

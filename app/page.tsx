@@ -8,7 +8,7 @@ import { testimonials } from "@/lib/testimonials";
 import ContactActions from "@/components/ContactActions";
 import { ArrowRight, ArrowUpRight, Rocket, ShieldCheck, Star as StarIcon } from "@/components/icons";
 
-const display = { fontFamily: 'var(--font-hanken), "Hanken Grotesk", sans-serif' };
+const display = { fontFamily: 'var(--font-syne), "Syne", sans-serif' };
 
 /* Client-facing taglines — outcome first, tech nowhere near the headline. */
 const clientTaglines: Record<string, string> = {
@@ -67,11 +67,14 @@ export default function Home() {
             </div>
 
             <h1
-              className="reveal-blur text-display max-w-5xl leading-[0.95] tracking-[-0.05em] mb-6"
+              className="reveal-blur text-display max-w-5xl leading-[0.95] tracking-[-0.05em] mb-5"
               style={display}
             >
-              Achraf Es-Soussy<span className="text-signal">.</span>
+              Achraf <span className="whitespace-nowrap">Es-Soussy<span className="text-signal">.</span></span>
             </h1>
+            <p className="reveal-fade font-mono text-[12px] sm:text-[13px] uppercase tracking-[0.35em] text-signal mb-7">
+              Full-Stack Web Developer
+            </p>
             <p
               className="reveal-blur text-title max-w-4xl leading-tight mb-8"
               style={{ ...display, fontWeight: 600 }}
@@ -244,6 +247,7 @@ export default function Home() {
               >
                 <Link
                   href={`/work/${p.slug}`}
+                  aria-label={`${p.name} case study`}
                   className={`relative block ${i % 2 === 1 ? "pl-[6%]" : "pr-[6%]"} pb-4`}
                 >
                   <LaptopFrame

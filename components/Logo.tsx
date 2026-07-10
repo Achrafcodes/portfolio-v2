@@ -25,7 +25,7 @@ export function LogoMark({ className = "size-8" }: { className?: string }) {
   );
 }
 
-const display = { fontFamily: 'var(--font-hanken), "Hanken Grotesk", sans-serif' };
+const display = { fontFamily: 'var(--font-syne), "Syne", sans-serif' };
 
 export default function Logo({
   onClick,

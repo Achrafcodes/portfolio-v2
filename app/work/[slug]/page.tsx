@@ -6,7 +6,7 @@ import PhoneFrame from "@/components/PhoneFrame";
 import type { Metadata } from "next";
 import { projects, getProject, getAdjacentProject } from "@/lib/projects";
 
-const display = { fontFamily: 'var(--font-hanken), "Hanken Grotesk", sans-serif' };
+const display = { fontFamily: 'var(--font-syne), "Syne", sans-serif' };
 
 export async function generateMetadata({
   params,

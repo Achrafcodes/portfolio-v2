@@ -1,15 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Hanken_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Syne, Inter, JetBrains_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import RevealScript from "@/components/RevealScript";
+import LoadingScreen from "@/components/LoadingScreen";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const hanken = Hanken_Grotesk({
-  variable: "--font-hanken",
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
   weight: ["600", "700", "800"],
+  display: "swap",
 });
 
 const inter = Inter({
@@ -27,6 +29,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#111415",
 };
 
 export const metadata: Metadata = {
@@ -87,7 +90,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${hanken.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${syne.variable} ${inter.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -106,8 +109,15 @@ export default function RootLayout({
         className="antialiased overflow-x-hidden text-body"
         style={{ fontFamily: "var(--font-inter), sans-serif" }}
       >
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[110] focus:bg-signal focus:text-on-signal focus:px-4 focus:py-2 focus:rounded-md font-mono text-label uppercase"
+        >
+          Skip to content
+        </a>
+        <LoadingScreen />
         <Nav />
-        <main className="relative z-10 pt-28 md:pt-36">{children}</main>
+        <main id="main" className="relative z-10 pt-28 md:pt-36">{children}</main>
         <Footer />
         <RevealScript />
       </body>

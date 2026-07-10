@@ -2,7 +2,7 @@ import Link from "next/link";
 import { LogoMark } from "@/components/Logo";
 import { site } from "@/lib/site";
 
-const display = { fontFamily: 'var(--font-hanken), "Hanken Grotesk", sans-serif' };
+const display = { fontFamily: 'var(--font-syne), "Syne", sans-serif' };
 
 export default function Footer() {
   return (
