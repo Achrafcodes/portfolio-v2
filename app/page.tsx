@@ -254,12 +254,12 @@ export default function Home() {
                     src={p.heroImage}
                     alt={`${p.name} interface`}
                     className={i % 2 === 1 ? "mock-tilt-r" : "mock-tilt"}
-                    sizes="(max-width: 1024px) 100vw, 54vw"
+                    sizes="(max-width: 1024px) 100vw, 65vw"
                   />
                   <PhoneFrame
                     src={p.mobileImage}
                     alt={`${p.name} mobile interface`}
-                    sizes="(max-width: 640px) 26vw, (max-width: 1024px) 20vw, 12vw"
+                    sizes="(max-width: 640px) 35vw, (max-width: 1024px) 28vw, 16vw"
                     className={`absolute -bottom-2 w-[24%] sm:w-[20%] lg:w-[16%] z-10 ${
                       i % 2 === 1 ? "left-0" : "right-0"
                     }`}

@@ -84,13 +84,13 @@ export default async function CaseStudyPage({
               src={project.heroImage}
               alt={`${project.name} interface`}
               priority
-              sizes="(max-width: 768px) 100vw, 64vw"
+              sizes="(max-width: 768px) 100vw, 75vw"
               className="mock-tilt"
             />
             <PhoneFrame
               src={project.mobileImage}
               alt={`${project.name} mobile interface`}
-              sizes="(max-width: 640px) 24vw, (max-width: 1024px) 18vw, 11vw"
+              sizes="(max-width: 640px) 32vw, (max-width: 1024px) 26vw, 15vw"
               className="absolute -bottom-2 right-0 w-[22%] sm:w-[18%] md:w-[15%] z-10"
             />
           </div>
@@ -164,7 +164,7 @@ export default async function CaseStudyPage({
                 src={g.src}
                 alt={g.label}
                 url={project.liveUrl}
-                sizes="(max-width: 768px) 100vw, 45vw"
+                sizes="(max-width: 768px) 100vw, 55vw"
                 className={i % 2 === 0 ? "mock-tilt" : "mock-tilt-r"}
               />
               <p className="font-mono text-label uppercase text-muted mt-5">
