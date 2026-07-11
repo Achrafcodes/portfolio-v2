@@ -58,6 +58,14 @@ export default function Footer() {
                 GitHub
               </a>
               <a
+                href={site.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-label uppercase text-muted hover:text-ink transition-colors"
+              >
+                Instagram
+              </a>
+              <a
                 href={`mailto:${site.email}`}
                 className="font-mono text-label uppercase text-muted hover:text-ink transition-colors"
               >

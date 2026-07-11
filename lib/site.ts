@@ -6,6 +6,7 @@ export const site = {
   url: "https://portfolio-v2-rho-bay.vercel.app",
   email: "achrafcodes99@gmail.com",
   github: "https://github.com/Achrafcodes",
+  instagram: "https://instagram.com/achrafcodes",
   location: "Kenitra, Morocco",
   gmailCompose:
     "https://mail.google.com/mail/?view=cm&fs=1&to=achrafcodes99@gmail.com&su=Project%20inquiry",

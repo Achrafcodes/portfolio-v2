@@ -74,7 +74,7 @@ const personJsonLd = {
   jobTitle: "Full-Stack Web Developer",
   email: `mailto:${site.email}`,
   url: site.url,
-  sameAs: [site.github],
+  sameAs: [site.github, site.instagram],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Kenitra",
