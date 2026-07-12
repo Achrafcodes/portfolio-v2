@@ -210,7 +210,7 @@ export default function Home() {
           <div className="max-w-container mx-auto px-page">
             <div className="reveal-up flex flex-col items-center gap-6 text-center">
               <p className="font-mono text-[10px] text-signal uppercase tracking-[0.3em]">
-                Featured client review
+                Featured review
               </p>
               <div className="flex gap-1">
                 <Star />
@@ -224,10 +224,7 @@ export default function Home() {
                   className="text-subtitle text-ink leading-snug tracking-tight"
                   style={display}
                 >
-                  &ldquo;The interface is clean, the performance is
-                  excellent, and the entire experience feels professional
-                  — we&apos;ve received positive feedback from customers
-                  since the new site went live.&rdquo;
+                  &ldquo;{featuredTestimonial.quote}&rdquo;
                 </p>
               </blockquote>
               <div className="flex items-center gap-4">

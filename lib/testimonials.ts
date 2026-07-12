@@ -1,7 +1,7 @@
 /**
- * Real, named client testimonials. Fatima Ezzaharae Aghazdiss (Reckon) is
- * featured separately in the hero ribbon — not repeated here to avoid
- * duplication.
+ * Real, named testimonials. Fatima Ezzaharae Aghazdiss is a Reckon
+ * subscriber (not client work) and is featured separately in the hero
+ * ribbon — not repeated here to avoid duplication.
  */
 export const testimonials = [
   {
@@ -29,5 +29,5 @@ export const featuredTestimonial = {
   quote:
     "Reckon has made managing my finances incredibly simple. Uploading my bank statements and getting instant insights saves me hours every month. Achraf delivered a polished, reliable application that exceeded my expectations.",
   name: "Fatima Ezzaharae Aghazdiss",
-  role: "Reckon",
+  role: "Reckon subscriber",
 };
