@@ -34,6 +34,12 @@ export default function HeroGrid() {
       return;
     }
 
+    // Touch devices have no cursor to track — drive a slow ambient drift
+    // instead so the background is never dead/empty on mobile.
+    const coarsePointer = window.matchMedia(
+      "(pointer: coarse), (hover: none)"
+    ).matches;
+
     // Latest pointer position, written by the raw handler, read by rAF.
     const pointer = { x: 0, y: 0, active: false };
     const onMove = (e: MouseEvent) => {
@@ -46,8 +52,10 @@ export default function HeroGrid() {
       pointer.active = false;
     };
 
-    section.addEventListener("mousemove", onMove);
-    section.addEventListener("mouseleave", onLeave);
+    if (!coarsePointer) {
+      section.addEventListener("mousemove", onMove);
+      section.addEventListener("mouseleave", onLeave);
+    }
 
     let raf = 0;
     let running = false;
@@ -57,9 +65,18 @@ export default function HeroGrid() {
 
       const radius = 200 + Math.sin(t * 0.0012) * 60;
       root.style.setProperty("--radius", `${radius.toFixed(1)}px`);
-      root.style.setProperty("--mx", `${pointer.x}px`);
-      root.style.setProperty("--my", `${pointer.y}px`);
-      root.style.setProperty("--spot-opacity", pointer.active ? "1" : "0");
+
+      if (coarsePointer) {
+        const driftX = 50 + Math.sin(t * 0.00018) * 22;
+        const driftY = 40 + Math.cos(t * 0.00013) * 18;
+        root.style.setProperty("--mx", `${driftX}%`);
+        root.style.setProperty("--my", `${driftY}%`);
+        root.style.setProperty("--spot-opacity", "0.5");
+      } else {
+        root.style.setProperty("--mx", `${pointer.x}px`);
+        root.style.setProperty("--my", `${pointer.y}px`);
+        root.style.setProperty("--spot-opacity", pointer.active ? "1" : "0");
+      }
     };
 
     const start = () => {
