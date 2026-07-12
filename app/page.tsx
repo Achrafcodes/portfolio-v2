@@ -5,7 +5,6 @@ import PhoneFrame from "@/components/PhoneFrame";
 import AuroraBackground from "@/components/AuroraBackground";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
-import { testimonials } from "@/lib/testimonials";
 import ContactActions from "@/components/ContactActions";
 import { ArrowRight, ArrowUpRight, Rocket, ShieldCheck, Star as StarIcon } from "@/components/icons";
 
@@ -184,6 +183,9 @@ export default function Home() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-signal/30 to-transparent" />
           <div className="max-w-container mx-auto px-page">
             <div className="reveal-up flex flex-col items-center gap-6 text-center">
+              <p className="font-mono text-[10px] text-signal uppercase tracking-[0.3em]">
+                Featured client review
+              </p>
               <div className="flex gap-1">
                 <Star />
                 <Star />
@@ -376,38 +378,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ============ TESTIMONIALS ============ */}
-      <section className="px-page pt-section max-w-container mx-auto">
-        <div className="reveal-up border-b border-line pb-6 mb-16">
-          <p className="font-mono text-[10px] text-signal uppercase tracking-[0.3em] mb-4">
-            Client voices
-          </p>
-          <h2 className="text-title text-ink" style={display}>
-            What clients say
-          </h2>
-        </div>
-        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <figure
-              key={t.role}
-              className="reveal-scale glass-card rounded-2xl p-8 flex flex-col justify-between gap-8"
-            >
-              <blockquote className="text-body text-ink leading-relaxed">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
-              <figcaption>
-                <div className="font-mono text-label uppercase text-signal font-bold">
-                  {t.name}
-                </div>
-                <div className="font-mono text-[11px] uppercase text-faint mt-1">
-                  {t.role}
-                </div>
-              </figcaption>
-            </figure>
-          ))}
         </div>
       </section>
 
