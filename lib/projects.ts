@@ -185,11 +185,11 @@ export const projects: Project[] = [
     number: "PROJECT 04",
     name: "LEGACY IMPORT",
     tagline:
-      "Marketing site and cost simulator for a real business importing vehicles from Japanese/Korean auctions into Belgium — paid client work.",
+      "Marketing site and cost simulator for a real business importing vehicles from Japanese/Korean auctions into Belgium — an ongoing client relationship since 2022.",
     outcomeHeadline: "Domain complexity most CRUD sites never touch.",
     outcomeBody: [
-      "Legacy Import is a live business — a French-language site for a real client importing Porsches, Maseratis, and other vehicles from Japanese and Korean auctions into Belgium. The standout feature is a genuine import cost simulator that computes the full landed cost: Japan auction fees by bid tier, offshore invoice, commission, Belgian customs duties, port fees at Antwerp, VAT, transport, and homologation — real business logic, not a template checkout.",
-      "Beyond the marketing site, a separate Python bot was built for this client: it pulls auction photos and listing data and publishes them straight to Firebase, replacing a manual process of double-posting every listing to Telegram and the website by hand. That automation saves the client roughly 2 hours a day.",
+      "Legacy Import is a live business — a French-language site for a real client importing Porsches, Maseratis, and other vehicles from Japanese and Korean auctions into Belgium. Built in 2022 and still an active engagement two years on: ongoing debugging, fixes, and feature changes as the business's needs evolve. The standout feature is a genuine import cost simulator that computes the full landed cost: Japan auction fees by bid tier, offshore invoice, commission, Belgian customs duties, port fees at Antwerp, VAT, transport, and homologation — real business logic, not a template checkout.",
+      "Beyond the marketing site, a separate Python bot was built for this client: it pulls auction photos and listing data from Telegram and publishes them straight to Firebase and the website, replacing a manual process of double-posting every listing by hand. That automation saves the client roughly 2 hours a day.",
     ],
     features: [
       {
