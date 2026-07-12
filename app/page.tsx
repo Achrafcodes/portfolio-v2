@@ -91,8 +91,7 @@ export default function Home() {
             <p className="reveal-up text-lede text-muted max-w-2xl mx-auto mb-12 opacity-90">
               I build for real estate agents, vehicle dealers, and founders
               who need an MVP that actually ships — scoped like a project,
-              not hacked together over a weekend. Everything on this page is
-              live right now, not a demo.
+              not hacked together over a weekend.
             </p>
 
             <div className="reveal-up flex flex-wrap items-center justify-center gap-4">
@@ -227,6 +226,9 @@ export default function Home() {
             <h2 className="text-title text-ink tracking-tighter" style={display}>
               Things I&apos;ve built.
             </h2>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-muted mt-3">
+              All live. Click through and use them.
+            </p>
           </div>
           <div className="flex flex-wrap gap-3">
             {["REACT", "NEXT.JS", "TAILWIND", "TYPESCRIPT"].map((t) => (
