@@ -114,8 +114,34 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Value cards bento */}
-          <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto mt-24">
+          {/* Value cards — compact row on mobile so proof (Work section) arrives sooner */}
+          <div className="reveal-up sm:hidden grid grid-cols-3 gap-2 max-w-5xl mx-auto mt-16">
+            <div className="glass-card rounded-xl px-2 py-3 text-center">
+              <div className="text-subtitle text-white" style={display}>
+                {String(projects.length).padStart(2, "0")}
+              </div>
+              <div className="font-mono text-[8px] uppercase tracking-wide text-muted mt-1">
+                In production
+              </div>
+            </div>
+            <div className="glass-card rounded-xl px-2 py-3 text-center">
+              <div className="text-subtitle text-live" style={display}>
+                95+
+              </div>
+              <div className="font-mono text-[8px] uppercase tracking-wide text-muted mt-1">
+                Lighthouse
+              </div>
+            </div>
+            <div className="glass-card rounded-xl px-2 py-3 text-center flex flex-col items-center justify-center">
+              <ShieldCheck className="size-4 text-signal mb-1" />
+              <div className="font-mono text-[8px] uppercase tracking-wide text-muted">
+                Secure
+              </div>
+            </div>
+          </div>
+
+          {/* Value cards bento — full detail from tablet up */}
+          <div className="reveal-stagger hidden sm:grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto mt-24">
             {/* In production */}
             <div className="reveal-scale glass-card p-8 rounded-2xl flex flex-col justify-between group">
               <div>
