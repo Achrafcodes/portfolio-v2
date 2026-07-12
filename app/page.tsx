@@ -74,7 +74,7 @@ export default function Home() {
               Achraf Es-Soussy
             </h1>
             <p className="reveal-fade font-mono text-[12px] sm:text-[13px] uppercase tracking-[0.35em] text-signal mb-7">
-              MERN-Stack Developer &amp; Project Controls Professional
+              Full-Stack Web Developer
             </p>
             <p
               className="reveal-blur text-title max-w-4xl leading-tight mb-8"
@@ -324,30 +324,26 @@ export default function Home() {
               Who&apos;s building this
             </p>
             <h2 className="reveal-blur text-title text-ink mb-6" style={display}>
-              I schedule million-dollar builds for a living. Your project gets the same rigor.
+              Self-taught. Shipped. Still learning on purpose.
             </h2>
             <div className="reveal-up space-y-5 text-body text-muted max-w-xl">
               <p>
-                I&apos;m Achraf — a MERN-stack developer based in Kenitra,
-                Morocco, and by day a Master Scheduler / Project Controls
-                professional in EPC industrial environments (hydro, aerospace,
-                telecom infrastructure). That&apos;s not a side note. It means
-                I already know how to break a project into a schedule, hold a
-                deadline that has real money attached to it, and talk to a
-                non-technical stakeholder about a real business problem
-                without burying them in jargon — skills most developers pick
-                up the hard way, if at all.
+                I&apos;m Achraf — a full-stack web developer based in Kenitra,
+                Morocco. Self-taught since 2021, through building real
+                projects rather than tutorials: React and Next.js first,
+                then Node.js, Express, and MongoDB to round out the stack. No
+                bootcamp, no CS degree — just enough finished, live products
+                that the gaps stopped mattering.
               </p>
               <p>
-                I bring that same discipline to web builds: a landed-cost
-                import calculator for a vehicle import business (Legacy
-                Import), not a template checkout; a finance dashboard with a
-                pre-launch security audit and currency math that&apos;s exact
-                to the cent (Reckon); real-time systems that don&apos;t drop
-                messages under load (Hustl). No account managers, no handoffs
-                between three different people — whoever you talk to about
-                your project is the person scheduling it and writing the
-                code.
+                That shows up in how I work: a landed-cost import calculator
+                for a vehicle import business (Legacy Import), not a template
+                checkout; a finance dashboard with a pre-launch security audit
+                and currency math that&apos;s exact to the cent (Reckon);
+                real-time systems that don&apos;t drop messages under load
+                (Hustl). No account managers, no handoffs between three
+                different people — whoever you talk to about your project is
+                the person writing the code.
               </p>
               <p>
                 I&apos;ve delivered work for more than 10 businesses — real
