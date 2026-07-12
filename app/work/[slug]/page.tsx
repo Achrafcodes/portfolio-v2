@@ -48,7 +48,7 @@ export default async function CaseStudyPage({
       <section className="px-page mb-section max-w-container mx-auto">
         <div className="reveal-stagger max-w-4xl mb-14">
           <div className="reveal-fade font-mono text-label uppercase text-signal mb-5">
-            {project.number} — {project.status}
+            {project.number} — {project.status} · {project.ownership}
           </div>
           <h1
             className="reveal-blur text-display text-ink mb-6"

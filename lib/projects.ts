@@ -11,7 +11,10 @@ export type Project = {
   gallery: { src: string; label: string }[];
   stack: string[];
   liveUrl: string;
+  /** LIVE or SHIPPED only — one axis: is it running right now. */
   status: string;
+  /** OWN PRODUCT or CLIENT WORK — separate axis: who it was built for. */
+  ownership: string;
 };
 
 /**
@@ -70,6 +73,7 @@ export const projects: Project[] = [
     stack: ["NEXT.JS 16", "TYPESCRIPT", "MONGODB ATLAS", "TAILWIND CSS V4", "RECHARTS"],
     liveUrl: "https://reckon-kappa.vercel.app",
     status: "LIVE",
+    ownership: "OWN PRODUCT",
   },
   {
     slug: "hustl",
@@ -122,6 +126,7 @@ export const projects: Project[] = [
     stack: ["REACT 19", "VITE", "NODE.JS / EXPRESS", "SOCKET.IO", "MONGODB"],
     liveUrl: "https://hustl-ivory.vercel.app",
     status: "SHIPPED",
+    ownership: "OWN PRODUCT",
   },
   {
     slug: "raqib",
@@ -173,6 +178,7 @@ export const projects: Project[] = [
     stack: ["REACT", "TYPESCRIPT", "NODE.JS / EXPRESS", "MONGODB ATLAS", "TAILWIND V4"],
     liveUrl: "https://raqib-one.vercel.app",
     status: "LIVE",
+    ownership: "OWN PRODUCT",
   },
   {
     slug: "legacy-import",
@@ -211,7 +217,8 @@ export const projects: Project[] = [
     ],
     stack: ["NEXT.JS", "TYPESCRIPT", "FIREBASE", "REDUX TOOLKIT", "MUI"],
     liveUrl: "https://www.legacyimport.fr",
-    status: "CLIENT WORK",
+    status: "LIVE",
+    ownership: "CLIENT WORK",
   },
 ];
 

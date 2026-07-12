@@ -276,7 +276,7 @@ export default function Home() {
               </div>
               <div className={`lg:col-span-5 reveal-up ${i % 2 === 1 ? "lg:order-1" : ""}`}>
                 <p className="font-mono text-[10px] text-signal uppercase tracking-[0.3em] mb-3">
-                  {String(i + 1).padStart(2, "0")} — {p.status}
+                  {String(i + 1).padStart(2, "0")} — {p.status} · {p.ownership}
                 </p>
                 <h3 className="text-subtitle text-ink mb-4" style={display}>
                   {p.name}
