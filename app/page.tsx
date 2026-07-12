@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LaptopFrame from "@/components/LaptopFrame";
 import PhoneFrame from "@/components/PhoneFrame";
-import AuroraBackground from "@/components/AuroraBackground";
+import HeroGrid from "@/components/HeroGrid";
 import { projects } from "@/lib/projects";
 import { site } from "@/lib/site";
 import ContactActions from "@/components/ContactActions";
@@ -52,7 +52,7 @@ export default function Home() {
     <>
       {/* ============ HERO — High-Impact v2 (Stitch) ============ */}
       <section className="relative pb-10 overflow-hidden">
-        <AuroraBackground />
+        <HeroGrid />
         <div className="px-page max-w-container mx-auto relative z-10">
           <div className="reveal-stagger text-center flex flex-col items-center">
             {/* Availability badge */}
