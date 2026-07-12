@@ -24,11 +24,31 @@ export default function Footer() {
               build, launch, and stay.
             </p>
             <a
-              href={`mailto:${site.email}`}
-              className="font-mono text-label uppercase text-signal hover:text-signal-bright transition-colors w-fit"
+              href={site.gmailCompose}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-fit items-center gap-2 bg-signal text-on-signal px-6 py-3 rounded-full font-mono text-[11px] uppercase tracking-widest font-bold hover:bg-signal-bright transition-colors"
             >
-              {site.email} →
+              Book a Free Scope Call
             </a>
+            <span className="font-mono text-[10px] uppercase tracking-widest text-faint">
+              Prefer email or WhatsApp? →{" "}
+              <a
+                href={`mailto:${site.email}`}
+                className="text-muted hover:text-ink transition-colors underline underline-offset-2"
+              >
+                Email
+              </a>{" "}
+              /{" "}
+              <a
+                href={site.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted hover:text-ink transition-colors underline underline-offset-2"
+              >
+                WhatsApp
+              </a>
+            </span>
           </div>
           <div className="flex gap-16">
             <div className="flex flex-col gap-3">
@@ -64,12 +84,6 @@ export default function Footer() {
                 className="font-mono text-label uppercase text-muted hover:text-ink transition-colors"
               >
                 Instagram
-              </a>
-              <a
-                href={`mailto:${site.email}`}
-                className="font-mono text-label uppercase text-muted hover:text-ink transition-colors"
-              >
-                Email
               </a>
             </div>
           </div>
