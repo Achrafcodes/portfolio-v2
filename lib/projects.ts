@@ -48,7 +48,7 @@ export const projects: Project[] = [
       },
     ],
     heroImage: "/reckon/reckon-dashboard-dark.png",
-    mobileImage: "/reckon/reckon-mobile-dark.png",
+    mobileImage: "/reckon/screencapture-reckon-kappa-vercel-app-dashboard-2026-07-07-02_51_34.png",
     gallery: [
       {
         src: "/reckon/screencapture-reckon-kappa-vercel-app-analytics-2026-07-07-02_50_25.png",

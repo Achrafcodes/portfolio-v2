@@ -324,16 +324,14 @@ export default function Home() {
               Who&apos;s building this
             </p>
             <h2 className="reveal-blur text-title text-ink mb-6" style={display}>
-              Self-taught. Shipped. Still learning on purpose.
+              One developer, start to finish.
             </h2>
             <div className="reveal-up space-y-5 text-body text-muted max-w-xl">
               <p>
                 I&apos;m Achraf — a full-stack web developer based in Kenitra,
-                Morocco. Self-taught since 2021, through building real
-                projects rather than tutorials: React and Next.js first,
-                then Node.js, Express, and MongoDB to round out the stack. No
-                bootcamp, no CS degree — just enough finished, live products
-                that the gaps stopped mattering.
+                Morocco. I work across the stack: React and Next.js on the
+                front end, Node.js, Express, and MongoDB on the back end,
+                shipping real, live products rather than tutorials or clones.
               </p>
               <p>
                 That shows up in how I work: a landed-cost import calculator
