@@ -5,18 +5,23 @@ import type { CSSProperties } from "react";
 
 /**
  * Hero background: a faint static grid, plus a second copy of the same
- * grid — tinted signal-orange — revealed only in a soft spotlight that
- * follows the cursor. Pure CSS custom-property updates on mousemove, no
- * animation loop, no WebGL. Skipped for reduced-motion users.
+ * grid — tinted signal-orange — revealed only in a spotlight that follows
+ * the cursor and continuously breathes in size (a slow pulse, like it's
+ * pulling the grid in and letting it go). CSS custom-property updates
+ * driven by one rAF loop, no WebGL. Skipped for reduced-motion users.
  */
 export default function HeroGrid() {
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const root = rootRef.current;
     const section = root?.parentElement;
     if (!root || !section) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      root.style.setProperty("--radius", "220px");
+      return;
+    }
 
     const onMove = (e: MouseEvent) => {
       const r = section.getBoundingClientRect();
@@ -28,9 +33,20 @@ export default function HeroGrid() {
 
     section.addEventListener("mousemove", onMove);
     section.addEventListener("mouseleave", onLeave);
+
+    // breathing radius: pulses between ~140px and ~260px on a slow cycle
+    let raf = 0;
+    const render = (t: number) => {
+      raf = requestAnimationFrame(render);
+      const radius = 200 + Math.sin(t * 0.0012) * 60;
+      root.style.setProperty("--radius", `${radius.toFixed(1)}px`);
+    };
+    raf = requestAnimationFrame(render);
+
     return () => {
       section.removeEventListener("mousemove", onMove);
       section.removeEventListener("mouseleave", onLeave);
+      cancelAnimationFrame(raf);
     };
   }, []);
 
@@ -43,7 +59,7 @@ export default function HeroGrid() {
     <div
       ref={rootRef}
       className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
-      style={{ "--spot-opacity": 0 } as CSSProperties}
+      style={{ "--spot-opacity": 0, "--radius": "220px" } as CSSProperties}
       aria-hidden
     >
       {/* base grid, always faint */}
@@ -58,7 +74,7 @@ export default function HeroGrid() {
             "radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 100%)",
         }}
       />
-      {/* cursor spotlight — signal-orange grid, revealed only near the pointer */}
+      {/* cursor spotlight — signal-orange grid, breathing radius, revealed only near the pointer */}
       <div
         className="absolute inset-0 transition-opacity duration-300"
         style={{
@@ -66,9 +82,9 @@ export default function HeroGrid() {
           backgroundImage: spotGrid,
           backgroundSize: "56px 56px",
           maskImage:
-            "radial-gradient(circle 220px at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%)",
+            "radial-gradient(circle var(--radius, 220px) at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%)",
           WebkitMaskImage:
-            "radial-gradient(circle 220px at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%)",
+            "radial-gradient(circle var(--radius, 220px) at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%)",
         }}
       />
     </div>
