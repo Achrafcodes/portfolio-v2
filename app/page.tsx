@@ -7,6 +7,7 @@ import { projects } from "@/lib/projects";
 import { testimonials, featuredTestimonial } from "@/lib/testimonials";
 import { site } from "@/lib/site";
 import ContactActions from "@/components/ContactActions";
+import TechIcon from "@/components/TechIcon";
 import { ArrowRight, ArrowUpRight, Star as StarIcon } from "@/components/icons";
 
 const display = { fontFamily: 'var(--font-syne), "Syne", sans-serif' };
@@ -179,12 +180,19 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            {["REACT", "NEXT.JS", "TAILWIND", "TYPESCRIPT"].map((t) => (
+            {[
+              { label: "REACT / NEXT.JS", icon: "react" },
+              { label: "TYPESCRIPT", icon: "typescript" },
+              { label: "NODE.JS", icon: "nodejs" },
+              { label: "MONGODB", icon: "mongodb" },
+              { label: "TAILWIND", icon: "tailwind" },
+            ].map((t) => (
               <span
-                key={t}
-                className="font-mono text-[10px] px-4 py-2 bg-white/5 rounded-full border border-white/10 tracking-widest hover:border-white/20 transition-colors"
+                key={t.label}
+                className="flex items-center gap-2 font-mono text-[10px] px-4 py-2 bg-white/5 rounded-full border border-white/10 tracking-widest hover:border-white/20 transition-colors"
               >
-                {t}
+                <TechIcon name={t.icon} />
+                {t.label}
               </span>
             ))}
           </div>
