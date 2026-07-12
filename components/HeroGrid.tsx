@@ -159,6 +159,20 @@ export default function HeroGrid() {
           }}
         />
       ))}
+      {/* Dims the spotlight under the headline/subtext/CTA column so the
+          effect never fights text readability — ~35% canvas wash, masked
+          to fade out toward the edges of that column. */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundColor: "var(--color-canvas)",
+          opacity: 0.35,
+          maskImage:
+            "radial-gradient(ellipse 55% 60% at 50% 34%, black 55%, transparent 100%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 55% 60% at 50% 34%, black 55%, transparent 100%)",
+        }}
+      />
     </div>
   );
 }
