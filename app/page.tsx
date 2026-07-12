@@ -343,11 +343,17 @@ export default function Home() {
                 actually secure, and code that still makes sense six months
                 later.
               </p>
+              <p>
+                I&apos;ve delivered client work for more than 10 businesses —
+                the case studies below are the ones with a live, public site
+                to show. The rest are real, just not deployed publicly, which
+                is why they&apos;re not featured here.
+              </p>
             </div>
             <div className="reveal-stagger grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 max-w-xl">
               {[
-                { k: "04", v: "Shipped projects" },
-                { k: "1", v: "Paid client, real testimonial" },
+                { k: "10+", v: "Client projects delivered" },
+                { k: "04", v: "Live case studies shown" },
                 { k: "95+", v: "Lighthouse performance" },
                 { k: "0", v: "Agency layers between us" },
               ].map((s) => (
