@@ -1,6 +1,7 @@
 /**
- * Real, named client testimonials. Nils Chavrin (Legacy Import) is featured
- * separately in the hero ribbon — not repeated here to avoid duplication.
+ * Real, named client testimonials. Fatima Ezzaharae Aghazdiss (Reckon) is
+ * featured separately in the hero ribbon — not repeated here to avoid
+ * duplication.
  */
 export const testimonials = [
   {
@@ -26,7 +27,7 @@ export const testimonials = [
 /** Featured quote, shown in the hero ribbon. */
 export const featuredTestimonial = {
   quote:
-    "Our car importation website needed to inspire confidence while remaining easy to use, and Achraf delivered exactly that. The interface is clean, the performance is excellent, and the entire experience feels professional. He paid attention to every detail and was quick to respond whenever we needed adjustments. We've received positive feedback from customers since the new site went live.",
-  name: "Nils Chavrin",
-  role: "Legacy Import, Belgium",
+    "Reckon has made managing my finances incredibly simple. Uploading my bank statements and getting instant insights saves me hours every month. Achraf delivered a polished, reliable application that exceeded my expectations.",
+  name: "Fatima Ezzaharae Aghazdiss",
+  role: "Reckon",
 };
