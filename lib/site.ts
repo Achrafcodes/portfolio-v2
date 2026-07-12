@@ -1,8 +1,8 @@
 export const site = {
   name: "Achraf Es-Soussy",
-  title: "Achraf Es-Soussy — Full-Stack Web Developer",
+  title: "Achraf Es-Soussy — MERN-Stack Developer for Real Businesses",
   description:
-    "From idea to live product. I design, build, and launch high-performance web platforms — SaaS, dashboards, and client sites that turn visitors into customers.",
+    "Fixed-price web platforms for real estate agents, vehicle dealers, and founders who need an MVP that actually ships — built with the same scheduling discipline used on multi-million-dollar EPC projects.",
   url: "https://portfolio-v2-rho-bay.vercel.app",
   email: "achrafcodes99@gmail.com",
   github: "https://github.com/Achrafcodes",

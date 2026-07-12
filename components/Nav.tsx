@@ -46,7 +46,7 @@ export default function Nav() {
               rel="noopener noreferrer"
               className="bg-white text-black px-6 py-2 font-mono text-[11px] rounded-full hover:bg-signal hover:text-on-signal transition-all active:scale-95 font-bold uppercase tracking-widest"
             >
-              Get a Quote
+              Book a Scope Call
             </a>
           </div>
           {/* Mobile menu toggle */}
@@ -105,7 +105,7 @@ export default function Nav() {
             }`}
             style={{ transitionDelay: open ? "400ms" : "0ms" }}
           >
-            Get a Quote
+            Book a Scope Call
           </a>
         </div>
         <div
