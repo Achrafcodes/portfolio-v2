@@ -7,8 +7,14 @@ import type { CSSProperties } from "react";
  * Hero background: a faint static grid, plus a second copy of the same
  * grid — tinted signal-orange — revealed only in a spotlight that follows
  * the cursor and continuously breathes in size (a slow pulse, like it's
- * pulling the grid in and letting it go). CSS custom-property updates
- * driven by one rAF loop, no WebGL. Skipped for reduced-motion users.
+ * pulling the grid in and letting it go).
+ *
+ * Perf: mousemove only records the latest pointer position into a ref —
+ * it never touches the DOM. A single rAF loop reads that ref and writes
+ * CSS custom properties (mask-image position + opacity) once per frame.
+ * The loop is torn down (not just idle) whenever the hero scrolls out of
+ * view or the tab is hidden, and never started at all for touch pointers
+ * or prefers-reduced-motion.
  */
 export default function HeroGrid() {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -18,35 +24,77 @@ export default function HeroGrid() {
     const section = root?.parentElement;
     if (!root || !section) return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reduceMotion) {
+      // Fully static: base grid only, no spotlight, no rAF loop at all.
       root.style.setProperty("--radius", "220px");
       return;
     }
 
+    // Latest pointer position, written by the raw handler, read by rAF.
+    const pointer = { x: 0, y: 0, active: false };
     const onMove = (e: MouseEvent) => {
       const r = section.getBoundingClientRect();
-      root.style.setProperty("--mx", `${e.clientX - r.left}px`);
-      root.style.setProperty("--my", `${e.clientY - r.top}px`);
-      root.style.setProperty("--spot-opacity", "1");
+      pointer.x = e.clientX - r.left;
+      pointer.y = e.clientY - r.top;
+      pointer.active = true;
     };
-    const onLeave = () => root.style.setProperty("--spot-opacity", "0");
+    const onLeave = () => {
+      pointer.active = false;
+    };
 
     section.addEventListener("mousemove", onMove);
     section.addEventListener("mouseleave", onLeave);
 
-    // breathing radius: pulses between ~140px and ~260px on a slow cycle
     let raf = 0;
+    let running = false;
+
     const render = (t: number) => {
       raf = requestAnimationFrame(render);
+
       const radius = 200 + Math.sin(t * 0.0012) * 60;
       root.style.setProperty("--radius", `${radius.toFixed(1)}px`);
+      root.style.setProperty("--mx", `${pointer.x}px`);
+      root.style.setProperty("--my", `${pointer.y}px`);
+      root.style.setProperty("--spot-opacity", pointer.active ? "1" : "0");
     };
-    raf = requestAnimationFrame(render);
+
+    const start = () => {
+      if (running) return;
+      running = true;
+      raf = requestAnimationFrame(render);
+    };
+    const stop = () => {
+      running = false;
+      cancelAnimationFrame(raf);
+    };
+
+    // Pause entirely when the hero scrolls out of view.
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !document.hidden) start();
+        else stop();
+      },
+      { threshold: 0 }
+    );
+    io.observe(section);
+
+    // Pause entirely when the tab is backgrounded.
+    const onVisibility = () => {
+      if (document.hidden) stop();
+      else if (section.getBoundingClientRect().top < window.innerHeight) start();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
 
     return () => {
       section.removeEventListener("mousemove", onMove);
       section.removeEventListener("mouseleave", onLeave);
-      cancelAnimationFrame(raf);
+      document.removeEventListener("visibilitychange", onVisibility);
+      io.disconnect();
+      stop();
     };
   }, []);
 
