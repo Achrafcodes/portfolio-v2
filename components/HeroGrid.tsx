@@ -74,19 +74,26 @@ export default function HeroGrid() {
             "radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 100%)",
         }}
       />
-      {/* cursor spotlight — signal-orange grid, breathing radius, revealed only near the pointer */}
-      <div
-        className="absolute inset-0 transition-opacity duration-300"
-        style={{
-          opacity: "var(--spot-opacity, 0)",
-          backgroundImage: spotGrid,
-          backgroundSize: "56px 56px",
-          maskImage:
-            "radial-gradient(circle var(--radius, 220px) at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%)",
-          WebkitMaskImage:
-            "radial-gradient(circle var(--radius, 220px) at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%)",
-        }}
-      />
+      {/* cursor spotlight — signal-orange grid, breathing radius, revealed only near the pointer.
+          Three layers at increasing cell size, each masked to a smaller ring, so the grid
+          appears to magnify/bulge larger the closer it is to the spotlight's center. */}
+      {[
+        { size: 56, stop: "100%" },
+        { size: 84, stop: "62%" },
+        { size: 120, stop: "32%" },
+      ].map(({ size, stop }) => (
+        <div
+          key={size}
+          className="absolute inset-0 transition-opacity duration-300"
+          style={{
+            opacity: "var(--spot-opacity, 0)",
+            backgroundImage: spotGrid,
+            backgroundSize: `${size}px ${size}px`,
+            maskImage: `radial-gradient(circle calc(var(--radius, 220px) * ${stop === "100%" ? 1 : parseInt(stop) / 100}) at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%)`,
+            WebkitMaskImage: `radial-gradient(circle calc(var(--radius, 220px) * ${stop === "100%" ? 1 : parseInt(stop) / 100}) at var(--mx, 50%) var(--my, 50%), black 0%, transparent 100%)`,
+          }}
+        />
+      ))}
     </div>
   );
 }
