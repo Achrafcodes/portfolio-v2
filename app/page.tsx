@@ -346,15 +346,17 @@ export default function Home() {
               <p>
                 I&apos;ve delivered work for more than 10 businesses — real
                 estate agents, vehicle dealers, SaaS founders needing an MVP.
-                The case studies below are the ones with a live, public site
-                to show; the rest are real, just not deployed publicly, which
-                is why they&apos;re not featured here.
+                The four case studies below are the ones with a live, public
+                site to show.
               </p>
             </div>
-            <div className="reveal-stagger grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 max-w-xl">
+            <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10 max-w-xl">
               {[
-                { k: "10+", v: "Client projects delivered" },
-                { k: "04", v: "Live case studies shown" },
+                {
+                  k: "10+",
+                  v: "Projects delivered",
+                  caption: "4 shown below — the rest are client-owned or under NDA",
+                },
                 { k: "95+", v: "Lighthouse performance" },
                 { k: "0", v: "Agency layers between us" },
               ].map((s) => (
@@ -365,6 +367,11 @@ export default function Home() {
                   <div className="font-mono text-[10px] uppercase tracking-wider text-faint mt-1">
                     {s.v}
                   </div>
+                  {s.caption && (
+                    <div className="font-mono text-[9px] uppercase tracking-wide text-faint/70 mt-1.5 leading-relaxed">
+                      {s.caption}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
