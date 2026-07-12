@@ -7,7 +7,7 @@ export type Project = {
   outcomeBody: string[];
   features: { icon: string; title: string; body: string }[];
   heroImage: string;
-  mobileImage: string;
+  mobileImage?: string;
   gallery: { src: string; label: string }[];
   stack: string[];
   liveUrl: string;
@@ -173,6 +173,45 @@ export const projects: Project[] = [
     stack: ["REACT", "TYPESCRIPT", "NODE.JS / EXPRESS", "MONGODB ATLAS", "TAILWIND V4"],
     liveUrl: "https://raqib-one.vercel.app",
     status: "LIVE",
+  },
+  {
+    slug: "legacy-import",
+    number: "PROJECT 04",
+    name: "LEGACY IMPORT",
+    tagline:
+      "Marketing site and cost simulator for a real business importing vehicles from Japanese/Korean auctions into Belgium — paid client work.",
+    outcomeHeadline: "Domain complexity most CRUD sites never touch.",
+    outcomeBody: [
+      "Legacy Import is a live business — a French-language site for a real client importing Porsches, Maseratis, and other vehicles from Japanese and Korean auctions into Belgium. The standout feature is a genuine import cost simulator that computes the full landed cost: Japan auction fees by bid tier, offshore invoice, commission, Belgian customs duties, port fees at Antwerp, VAT, transport, and homologation — real business logic, not a template checkout.",
+      "Beyond the marketing site, a separate Python bot was built for this client: it pulls auction photos and listing data and publishes them straight to Firebase, replacing a manual process of double-posting every listing to Telegram and the website by hand. That automation saves the client roughly 2 hours a day.",
+    ],
+    features: [
+      {
+        icon: "calculate",
+        title: "Cost Simulator",
+        body: "Computes full landed cost — auction fees, customs duties, port fees, VAT, and transport — in one form.",
+      },
+      {
+        icon: "directions_car",
+        title: "Live Auction Catalogs",
+        body: "Dynamic Korean and Japanese vehicle catalogs with detail routes, backed by a Google Sheets data pipeline.",
+      },
+      {
+        icon: "admin_panel_settings",
+        title: "Role-Based Admin",
+        body: "Firebase Auth with separate user and admin areas, product and order management, Firestore + Storage backed.",
+      },
+    ],
+    heroImage: "/legacy-import/hero.png",
+    gallery: [
+      { src: "/legacy-import/japon.png", label: "View 01: Japan Catalog" },
+      { src: "/legacy-import/selection.png", label: "View 02: Selection" },
+      { src: "/legacy-import/features.png", label: "View 03: Daily Auctions" },
+      { src: "/legacy-import/contact.png", label: "View 04: Contact & Location" },
+    ],
+    stack: ["NEXT.JS", "TYPESCRIPT", "FIREBASE", "REDUX TOOLKIT", "MUI"],
+    liveUrl: "https://www.legacyimport.fr",
+    status: "CLIENT WORK",
   },
 ];
 

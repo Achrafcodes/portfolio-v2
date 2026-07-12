@@ -79,7 +79,7 @@ export default async function CaseStudyPage({
           </div>
         </div>
         <div className="reveal-scale mock-stage max-w-4xl mx-auto">
-          <div className="relative pr-[6%] pb-4">
+          <div className={`relative pb-4 ${project.mobileImage ? "pr-[6%]" : ""}`}>
             <LaptopFrame
               src={project.heroImage}
               alt={`${project.name} interface`}
@@ -87,12 +87,14 @@ export default async function CaseStudyPage({
               sizes="(max-width: 768px) 100vw, 75vw"
               className="mock-tilt"
             />
-            <PhoneFrame
-              src={project.mobileImage}
-              alt={`${project.name} mobile interface`}
-              sizes="(max-width: 640px) 32vw, (max-width: 1024px) 26vw, 15vw"
-              className="absolute -bottom-2 right-0 w-[22%] sm:w-[18%] md:w-[15%] z-10"
-            />
+            {project.mobileImage && (
+              <PhoneFrame
+                src={project.mobileImage}
+                alt={`${project.name} mobile interface`}
+                sizes="(max-width: 640px) 32vw, (max-width: 1024px) 26vw, 15vw"
+                className="absolute -bottom-2 right-0 w-[22%] sm:w-[18%] md:w-[15%] z-10"
+              />
+            )}
           </div>
         </div>
       </section>

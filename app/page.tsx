@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import LaptopFrame from "@/components/LaptopFrame";
 import PhoneFrame from "@/components/PhoneFrame";
 import AuroraBackground from "@/components/AuroraBackground";
@@ -124,7 +125,7 @@ export default function Home() {
                 </p>
                 <div className="flex items-baseline gap-3">
                   <span className="text-stat text-white" style={display}>
-                    03
+                    {String(projects.length).padStart(2, "0")}
                   </span>
                   <Rocket className="size-5 text-signal animate-pulse" />
                 </div>
@@ -248,7 +249,7 @@ export default function Home() {
                 <Link
                   href={`/work/${p.slug}`}
                   aria-label={`${p.name} case study`}
-                  className={`relative block ${i % 2 === 1 ? "pl-[6%]" : "pr-[6%]"} pb-4`}
+                  className={`relative block ${p.mobileImage ? (i % 2 === 1 ? "pl-[6%]" : "pr-[6%]") : ""} pb-4`}
                 >
                   <LaptopFrame
                     src={p.heroImage}
@@ -256,14 +257,16 @@ export default function Home() {
                     className={i % 2 === 1 ? "mock-tilt-r" : "mock-tilt"}
                     sizes="(max-width: 1024px) 100vw, 65vw"
                   />
-                  <PhoneFrame
-                    src={p.mobileImage}
-                    alt={`${p.name} mobile interface`}
-                    sizes="(max-width: 640px) 35vw, (max-width: 1024px) 28vw, 16vw"
-                    className={`absolute -bottom-2 w-[24%] sm:w-[20%] lg:w-[16%] z-10 ${
-                      i % 2 === 1 ? "left-0" : "right-0"
-                    }`}
-                  />
+                  {p.mobileImage && (
+                    <PhoneFrame
+                      src={p.mobileImage}
+                      alt={`${p.name} mobile interface`}
+                      sizes="(max-width: 640px) 35vw, (max-width: 1024px) 28vw, 16vw"
+                      className={`absolute -bottom-2 w-[24%] sm:w-[20%] lg:w-[16%] z-10 ${
+                        i % 2 === 1 ? "left-0" : "right-0"
+                      }`}
+                    />
+                  )}
                 </Link>
               </div>
               <div className={`lg:col-span-5 reveal-up ${i % 2 === 1 ? "lg:order-1" : ""}`}>
@@ -296,6 +299,69 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ============ ABOUT ============ */}
+      <section id="about" className="px-page pt-section max-w-container mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="reveal-scale lg:col-span-4 lg:col-start-1">
+            <div className="relative aspect-[4/5] max-w-sm mx-auto lg:mx-0 rounded-2xl overflow-hidden border border-line-strong">
+              <Image
+                src="/about/achraf.jpg"
+                alt="Achraf Es-Soussy"
+                fill
+                quality={90}
+                className="object-cover"
+                sizes="(max-width: 1024px) 60vw, 380px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-canvas/40 to-transparent" />
+            </div>
+          </div>
+          <div className="lg:col-span-7 lg:col-start-6">
+            <p className="reveal-fade font-mono text-[10px] text-signal uppercase tracking-[0.3em] mb-4">
+              Who&apos;s building this
+            </p>
+            <h2 className="reveal-blur text-title text-ink mb-6" style={display}>
+              One developer, start to finish.
+            </h2>
+            <div className="reveal-up space-y-5 text-body text-muted max-w-xl">
+              <p>
+                I&apos;m Achraf — a full-stack web developer based in Kenitra,
+                Morocco. I design, build, and ship complete web platforms
+                solo: no account managers, no handoffs between three
+                different people, no agency markup. Whoever you talk to
+                about your project is the person who writes the code.
+              </p>
+              <p>
+                My work ranges from my own SaaS product (Reckon, with a full
+                pre-launch security audit) to real-time systems (Hustl) to a
+                paid client platform with genuine business logic — a landed-cost
+                import calculator, not another template checkout (Legacy
+                Import). I care about the details most portfolios skip:
+                currency math that&apos;s exact to the cent, auth that&apos;s
+                actually secure, and code that still makes sense six months
+                later.
+              </p>
+            </div>
+            <div className="reveal-stagger grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 max-w-xl">
+              {[
+                { k: "04", v: "Shipped projects" },
+                { k: "1", v: "Paid client, real testimonial" },
+                { k: "95+", v: "Lighthouse performance" },
+                { k: "0", v: "Agency layers between us" },
+              ].map((s) => (
+                <div key={s.v} className="reveal-fade">
+                  <div className="text-subtitle text-ink" style={display}>
+                    {s.k}
+                  </div>
+                  <div className="font-mono text-[10px] uppercase tracking-wider text-faint mt-1">
+                    {s.v}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
