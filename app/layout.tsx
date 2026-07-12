@@ -91,6 +91,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${syne.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <head>
