@@ -90,9 +90,9 @@ export default function Home() {
 
             <p className="reveal-up text-lede text-muted max-w-2xl mx-auto mb-12 opacity-90">
               I build for real estate agents, vehicle dealers, and founders
-              who need an MVP that actually ships — scoped like a project, not
-              vibe-coded like a weekend hack. Everything on this page is live
-              right now, not a demo.
+              who need an MVP that actually ships — scoped like a project,
+              not hacked together over a weekend. Everything on this page is
+              live right now, not a demo.
             </p>
 
             <div className="reveal-up flex flex-wrap items-center justify-center gap-4">
