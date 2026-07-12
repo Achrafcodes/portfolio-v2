@@ -92,8 +92,8 @@ export default function Home() {
 
             <p className="reveal-up text-lede text-muted max-w-2xl mx-auto mb-12 opacity-90">
               I build for real estate agents, vehicle dealers, and founders
-              who need an MVP that ships on a fixed scope and a fixed
-              timeline.
+              who need an MVP shipped — fixed scope, fixed price, fixed
+              deadline.
             </p>
 
             <div className="reveal-up flex flex-wrap items-center justify-center gap-4">
@@ -121,7 +121,7 @@ export default function Home() {
               <span className="mx-3 opacity-40">·</span>
               95+ Lighthouse on Client Builds
               <span className="mx-3 opacity-40">·</span>
-              Replies &lt; 24h
+              10+ Projects Delivered
             </p>
           </div>
         </div>
