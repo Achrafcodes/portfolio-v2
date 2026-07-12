@@ -262,7 +262,7 @@ export default function Home() {
                       src={p.mobileImage}
                       alt={`${p.name} mobile interface`}
                       sizes="(max-width: 640px) 35vw, (max-width: 1024px) 28vw, 16vw"
-                      className={`absolute -bottom-2 w-[24%] sm:w-[20%] lg:w-[16%] z-10 ${
+                      className={`absolute -bottom-2 w-[38%] sm:w-[30%] lg:w-[26%] z-10 ${
                         i % 2 === 1 ? "left-0" : "right-0"
                       }`}
                     />

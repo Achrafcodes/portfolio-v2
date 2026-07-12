@@ -92,7 +92,7 @@ export default async function CaseStudyPage({
                 src={project.mobileImage}
                 alt={`${project.name} mobile interface`}
                 sizes="(max-width: 640px) 32vw, (max-width: 1024px) 26vw, 15vw"
-                className="absolute -bottom-2 right-0 w-[22%] sm:w-[18%] md:w-[15%] z-10"
+                className="absolute -bottom-2 right-0 w-[34%] sm:w-[26%] md:w-[20%] z-10"
               />
             )}
           </div>
