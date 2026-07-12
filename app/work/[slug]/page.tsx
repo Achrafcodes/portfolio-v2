@@ -64,7 +64,7 @@ export default async function CaseStudyPage({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-mono text-label uppercase border border-signal text-signal px-5 py-2.5 rounded-full hover:bg-signal hover:text-canvas transition-colors duration-300"
             >
-              Visit live site →
+              Visit live site ↗
             </a>
             <div className="flex flex-wrap gap-2">
               {project.stack.map((s) => (

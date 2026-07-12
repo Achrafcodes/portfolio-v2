@@ -111,7 +111,7 @@ export default function Home() {
                 className="glass-card text-ink px-6 sm:px-10 py-4 sm:py-5 font-mono text-[12px] sm:text-[13px] rounded-full hover:bg-white/10 transition-all flex items-center gap-3 font-bold tracking-widest uppercase"
               >
                 See the Work
-                <ArrowUpRight className="size-[18px]" />
+                <ArrowRight className="size-[18px]" />
               </a>
             </div>
 
