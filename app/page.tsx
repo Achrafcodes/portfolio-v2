@@ -362,7 +362,7 @@ export default function Home() {
                   caption: "4 shown below — the rest are client-owned or under NDA",
                 },
                 { k: "95+", v: "Lighthouse on client builds" },
-                { k: "0", v: "Agency layers between us" },
+                { k: "<24h", v: "Reply time" },
               ].map((s) => (
                 <div key={s.v} className="reveal-fade">
                   <div className="text-subtitle text-ink" style={display}>
