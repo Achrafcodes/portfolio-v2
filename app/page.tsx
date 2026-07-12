@@ -4,6 +4,7 @@ import LaptopFrame from "@/components/LaptopFrame";
 import PhoneFrame from "@/components/PhoneFrame";
 import HeroGrid from "@/components/HeroGrid";
 import { projects } from "@/lib/projects";
+import { testimonials, featuredTestimonial } from "@/lib/testimonials";
 import { site } from "@/lib/site";
 import ContactActions from "@/components/ContactActions";
 import { ArrowRight, ArrowUpRight, Rocket, ShieldCheck, Star as StarIcon } from "@/components/icons";
@@ -223,17 +224,20 @@ export default function Home() {
                   className="text-subtitle text-ink leading-snug tracking-tight"
                   style={display}
                 >
-                  &ldquo;The site feels fast, modern, and professional —
-                  we&apos;ve had several customers compliment the new
-                  design.&rdquo;
+                  &ldquo;The interface is clean, the performance is
+                  excellent, and the entire experience feels professional
+                  — we&apos;ve received positive feedback from customers
+                  since the new site went live.&rdquo;
                 </p>
               </blockquote>
               <div className="flex items-center gap-4">
                 <div className="h-px w-8 bg-white/20" />
                 <span className="font-mono text-[11px] tracking-[0.2em] text-muted uppercase">
-                  <span className="font-bold text-white">Julien Moreau</span>
+                  <span className="font-bold text-white">
+                    {featuredTestimonial.name}
+                  </span>
                   <span className="mx-2 opacity-30">—</span>
-                  <span className="opacity-60">Legacy Import, Belgium</span>
+                  <span className="opacity-60">{featuredTestimonial.role}</span>
                 </span>
                 <div className="h-px w-8 bg-white/20" />
               </div>
@@ -406,6 +410,38 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ============ TESTIMONIALS ============ */}
+      <section className="px-page pt-section max-w-container mx-auto">
+        <div className="reveal-up border-b border-line pb-6 mb-16">
+          <p className="font-mono text-[10px] text-signal uppercase tracking-[0.3em] mb-4">
+            Client voices
+          </p>
+          <h2 className="text-title text-ink" style={display}>
+            What clients say
+          </h2>
+        </div>
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.map((t) => (
+            <figure
+              key={t.role}
+              className="reveal-scale glass-card rounded-2xl p-8 flex flex-col justify-between gap-8"
+            >
+              <blockquote className="text-body text-ink leading-relaxed">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+              <figcaption>
+                <div className="font-mono text-label uppercase text-signal font-bold">
+                  {t.name}
+                </div>
+                <div className="font-mono text-[11px] uppercase text-faint mt-1">
+                  {t.role}
+                </div>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 

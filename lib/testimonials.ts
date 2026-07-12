@@ -1,18 +1,32 @@
 /**
- * Real client testimonials, verbatim from PROJECTS.md.
- *
- * Only Julien Moreau is named. Per FIX-02 (fix.md), the two anonymous
- * quotes ("Client — PDF editor product" / "Client — Real estate website")
- * are cut until permission is obtained to attribute them properly —
- * anonymous quotes read as unverifiable on a site whose whole pitch is
- * authenticity. Re-add them here (with a name + company or name +
- * country) once permission is granted.
+ * Real, named client testimonials. Nils Chavrin (Legacy Import) is featured
+ * separately in the hero ribbon — not repeated here to avoid duplication.
  */
 export const testimonials = [
   {
     quote:
-      "Achraf was easy to work with from day one. I already had a clear idea of how I wanted the website to look, and he managed to bring it to life almost exactly as I imagined. He was responsive, open to feedback, and always quick to make adjustments. The site feels fast, modern, and professional, and we've had several customers compliment the new design.",
-    name: "Julien Moreau",
-    role: "Legacy Import — vehicle import business, Belgium",
+      "Achraf built a modern and intuitive interface for our PDF editing platform. The application feels smooth, responsive, and easy to navigate, even with features that are usually complex. He communicates well, understands feedback quickly, and consistently delivers high-quality work. I'd definitely recommend him for any frontend project.",
+    name: "Adnane Dbani",
+    role: "PDF Editor product",
+  },
+  {
+    quote:
+      "Working with Achraf was a great experience from start to finish. He transformed our designs into a fast, responsive, and polished website that looks great on every device. Communication was always clear, deadlines were respected, and he was proactive in suggesting improvements we hadn't even considered. I'd gladly work with him again on future projects.",
+    name: "Luis Roldan",
+    role: "Vista Urbana",
+  },
+  {
+    quote:
+      "We wanted a website that would make booking trips simple while showcasing our destinations in a professional way. Achraf created exactly what we had in mind. The design is elegant, mobile-friendly, and loads quickly. He was reliable throughout the project and always found practical solutions whenever new requirements came up. It was a pleasure working with him.",
+    name: "Zaid Zarouki",
+    role: "Travel Agency",
   },
 ];
+
+/** Featured quote, shown in the hero ribbon. */
+export const featuredTestimonial = {
+  quote:
+    "Our car importation website needed to inspire confidence while remaining easy to use, and Achraf delivered exactly that. The interface is clean, the performance is excellent, and the entire experience feels professional. He paid attention to every detail and was quick to respond whenever we needed adjustments. We've received positive feedback from customers since the new site went live.",
+  name: "Nils Chavrin",
+  role: "Legacy Import, Belgium",
+};
