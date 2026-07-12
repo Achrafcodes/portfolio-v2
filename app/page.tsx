@@ -7,16 +7,16 @@ import { projects } from "@/lib/projects";
 import { testimonials, featuredTestimonial } from "@/lib/testimonials";
 import { site } from "@/lib/site";
 import ContactActions from "@/components/ContactActions";
-import { ArrowRight, ArrowUpRight, Rocket, ShieldCheck, Star as StarIcon } from "@/components/icons";
+import { ArrowRight, ArrowUpRight, Star as StarIcon } from "@/components/icons";
 
 const display = { fontFamily: 'var(--font-syne), "Syne", sans-serif' };
 
 /* Client-facing taglines — outcome first, tech nowhere near the headline. */
 const clientTaglines: Record<string, string> = {
   reckon:
-    "Tracking spend across a dozen accounts in a spreadsheet doesn't scale. Reckon parses a bank statement on upload and turns it into budgets, category breakdowns, and exportable reports — the financial clarity a founder actually needs, without hiring a bookkeeper first.",
+    "Tracking spend across a dozen accounts in a spreadsheet doesn't scale. Reckon parses a bank statement on upload and turns it into budgets, category breakdowns, and exportable reports — the financial clarity a founder needs, without hiring a bookkeeper first.",
   hustl:
-    "Job boards die on stale listings and messages that arrive an hour late. Hustl was built to solve the second problem specifically: real-time chat between candidates and employers that doesn't drop messages or lag, so a hiring conversation feels like texting, not email.",
+    "Real-time chat is where most job boards cut corners: messages lag, delivery status lies, typing indicators freeze. Hustl handles all three, so a hiring conversation feels instant, like texting.",
   raqib:
     "Freelancers lose money to invoices they forgot to send and reminders they forgot to chase. Raqib is the CRM I built when I got tired of doing that manually — one dashboard for clients, projects, and invoices that nags you before a client has to.",
 };
@@ -25,22 +25,22 @@ const steps = [
   {
     n: "01",
     title: "Discovery call",
-    body: "Fifteen minutes, no pitch deck. You describe the problem in your own words; I ask the questions that surface what it'll actually take.",
+    body: "Fifteen minutes, no pitch deck. You describe the problem in your own words, and I ask the questions that surface what it'll take.",
   },
   {
     n: "02",
     title: "Scoped proposal",
-    body: "A fixed price and timeline in writing before anything is built — not an hourly rate that quietly grows with the project.",
+    body: "You get a fixed price and timeline in writing before work starts. No hourly rate that quietly grows with the project.",
   },
   {
     n: "03",
     title: "Built in the open",
-    body: "You get a working preview link in the first days, not a reveal at the end. If something needs to change, it changes now, not after launch.",
+    body: "You get a working preview link within the first few days instead of a single reveal at the end, so changes happen while there's still time to make them easily.",
   },
   {
     n: "04",
     title: "Delivered, not disappeared",
-    body: "Launch day isn't the last day I hear from you. Post-launch support is part of the scope, not a renegotiation.",
+    body: "Launch day isn't the last time we talk. Post-launch support is already included in the scope, and every build gets a security pass before it ships.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function Home() {
                 <span className="relative inline-flex rounded-full size-2 bg-live" />
               </span>
               <span className="font-mono text-[10px] text-muted uppercase tracking-[0.2em] font-medium">
-                Currently taking new projects — replies within 24h
+                Currently taking new projects · replies within 24h
               </span>
             </div>
 
@@ -91,8 +91,8 @@ export default function Home() {
 
             <p className="reveal-up text-lede text-muted max-w-2xl mx-auto mb-12 opacity-90">
               I build for real estate agents, vehicle dealers, and founders
-              who need an MVP that actually ships — scoped like a project,
-              not hacked together over a weekend.
+              who need an MVP that ships on a fixed scope and a fixed
+              timeline.
             </p>
 
             <div className="reveal-up flex flex-wrap items-center justify-center gap-4">
@@ -113,94 +113,15 @@ export default function Home() {
                 <ArrowUpRight className="size-[18px]" />
               </a>
             </div>
-          </div>
 
-          {/* Value cards — compact row on mobile so proof (Work section) arrives sooner */}
-          <div className="reveal-up sm:hidden grid grid-cols-3 gap-2 max-w-5xl mx-auto mt-16">
-            <div className="glass-card rounded-xl px-2 py-3 text-center">
-              <div className="text-subtitle text-white" style={display}>
-                {String(projects.length).padStart(2, "0")}
-              </div>
-              <div className="font-mono text-[8px] uppercase tracking-wide text-muted mt-1">
-                In production
-              </div>
-            </div>
-            <div className="glass-card rounded-xl px-2 py-3 text-center">
-              <div className="text-subtitle text-live" style={display}>
-                95+
-              </div>
-              <div className="font-mono text-[8px] uppercase tracking-wide text-muted mt-1">
-                Lighthouse
-              </div>
-            </div>
-            <div className="glass-card rounded-xl px-2 py-3 text-center flex flex-col items-center justify-center">
-              <ShieldCheck className="size-4 text-signal mb-1" />
-              <div className="font-mono text-[8px] uppercase tracking-wide text-muted">
-                Secure
-              </div>
-            </div>
-          </div>
-
-          {/* Value cards bento — full detail from tablet up */}
-          <div className="reveal-stagger hidden sm:grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto mt-24">
-            {/* In production */}
-            <div className="reveal-scale glass-card p-8 rounded-2xl flex flex-col justify-between group">
-              <div>
-                <p className="font-mono text-[10px] text-signal uppercase tracking-widest mb-6">
-                  In Production
-                </p>
-                <div className="flex items-baseline gap-3">
-                  <span className="text-stat text-white" style={display}>
-                    {String(projects.length).padStart(2, "0")}
-                  </span>
-                  <Rocket className="size-5 text-signal animate-pulse" />
-                </div>
-              </div>
-              <ul className="mt-8 space-y-3">
-                {projects.map((p) => (
-                  <li key={p.slug}>
-                    <a
-                      href={p.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between font-mono text-[10px] text-muted uppercase group/item hover:text-white transition-colors"
-                    >
-                      <span>{p.name}</span>
-                      <ArrowRight className="size-3.5 opacity-30 group-hover/item:opacity-100 transition-opacity" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Vitals */}
-            <div className="reveal-scale glass-card p-8 rounded-2xl flex flex-col justify-between overflow-hidden relative">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-live/5 blur-2xl rounded-full -mr-8 -mt-8" />
-              <div>
-                <p className="font-mono text-[10px] text-live uppercase tracking-widest mb-6">
-                  Lighthouse
-                </p>
-                <div className="text-stat text-live" style={display}>
-                  95+
-                </div>
-              </div>
-              <p className="font-mono text-[10px] leading-relaxed text-muted mt-8 uppercase tracking-wider opacity-90">
-                On client builds — scores verified per project.
-              </p>
-            </div>
-
-            {/* Security */}
-            <div className="reveal-scale glass-card p-8 rounded-2xl flex flex-col items-center justify-center text-center border-white/10">
-              <div className="size-16 bg-white/5 rounded-full flex items-center justify-center mb-4 border border-white/10">
-                <ShieldCheck className="size-7 text-signal" />
-              </div>
-              <p className="font-mono text-[11px] text-white uppercase tracking-[0.2em] mb-1 font-bold">
-                Secure by Design
-              </p>
-              <p className="font-mono text-[9px] text-muted uppercase tracking-widest opacity-90">
-                Security-checked before every launch
-              </p>
-            </div>
+            {/* Proof strip — quiet footnote, not a section */}
+            <p className="reveal-fade font-mono text-[12px] sm:text-[13px] uppercase tracking-[0.2em] text-muted mt-10">
+              {String(projects.length).padStart(2, "0")} Projects Live
+              <span className="mx-3 opacity-40">·</span>
+              95+ Lighthouse on Client Builds
+              <span className="mx-3 opacity-40">·</span>
+              Replies &lt; 24h
+            </p>
           </div>
         </div>
 
@@ -359,26 +280,25 @@ export default function Home() {
             </h2>
             <div className="reveal-up space-y-5 text-body text-muted max-w-xl">
               <p>
-                I&apos;m Achraf — a full-stack web developer based in Kenitra,
+                I&apos;m Achraf, a full-stack web developer based in Kenitra,
                 Morocco. I work across the stack: React and Next.js on the
-                front end, Node.js, Express, and MongoDB on the back end,
-                shipping real, live products rather than tutorials or clones.
+                front end, Node.js, Express, and MongoDB on the back end.
+                Everything I build ships and stays live in production.
               </p>
               <p>
                 That shows up in how I work: a landed-cost import calculator
-                for a vehicle import business (Legacy Import), not a template
-                checkout; a finance dashboard with a pre-launch security audit
-                and currency math that&apos;s exact to the cent (Reckon);
-                real-time systems that don&apos;t drop messages under load
-                (Hustl). No account managers, no handoffs between three
-                different people — whoever you talk to about your project is
-                the person writing the code.
+                for a vehicle import business (Legacy Import) that models real
+                customs and auction fees; a finance dashboard with a
+                pre-launch security audit and currency math exact to the cent
+                (Reckon); real-time systems that don&apos;t drop messages
+                under load (Hustl). No account managers, no handoffs between
+                three different people — whoever you talk to about your
+                project is the person writing the code.
               </p>
               <p>
-                I&apos;ve delivered work for more than 10 businesses — real
-                estate agents, vehicle dealers, SaaS founders needing an MVP.
-                The four case studies below are the ones with a live, public
-                site to show.
+                I&apos;ve delivered work for more than 10 businesses total;
+                the four below are simply the ones with a live, public site
+                to point to.
               </p>
             </div>
             <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10 max-w-xl">
@@ -386,7 +306,7 @@ export default function Home() {
                 {
                   k: "10+",
                   v: "Projects delivered",
-                  caption: "4 shown below — the rest are client-owned or under NDA",
+                  caption: "4 shown below · the rest are client-owned or under NDA",
                 },
                 { k: "95+", v: "Lighthouse on client builds" },
                 { k: "<24h", v: "Reply time" },

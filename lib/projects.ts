@@ -81,7 +81,7 @@ export const projects: Project[] = [
     name: "HUSTL",
     tagline:
       "Full-stack job board built to prove out real-time features done right — candidates browse and apply, employers post listings and manage applicants.",
-    outcomeHeadline: "The real story is correctness, not the happy path.",
+    outcomeHeadline: "The real engineering story here is correctness under load.",
     outcomeBody: [
       "Hustl is a personal portfolio project built in a single month to stress-test real-time messaging: typing indicators, delivery status, unread badges, reconnect handling. The engineering story is fixing duplicate-message bugs, socket reconnect/rejoin logic, and scroll-position races against DOM paint.",
       "A full rebrand mid-build (Hirely → Hustl) surfaced a real production CORS bug — exact-origin string matching broke on trailing-slash mismatches and stale URLs. Fixed with an explicit, env-driven origin allowlist.",
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     number: "PROJECT 03",
     name: "RAQIB CRM",
     tagline: "A freelancer CRM built for Achraf's own client management. \"Keep an eye on your business.\"",
-    outcomeHeadline: "Built for real use, not a tutorial clone.",
+    outcomeHeadline: "Built from Achraf's own client workload: real invoices, real reminders, real deadlines.",
     outcomeBody: [
       "Raqib handles full CRUD on clients, projects, invoices, and reminders, with a dashboard showing real-time stats, an earnings chart, and pipeline breakdown. It generates invoice PDFs and emails them with attachments automatically.",
       "A daily automated digest sends upcoming reminders and overdue invoices. Security hygiene is applied even at personal scale: CORS whitelist, Helmet, rate limiting, input validation, and a JWT secret guard that fails startup if misconfigured.",
@@ -188,7 +188,7 @@ export const projects: Project[] = [
       "Marketing site and cost simulator for a real business importing vehicles from Japanese/Korean auctions into Belgium — an ongoing client relationship since 2022.",
     outcomeHeadline: "Domain complexity most CRUD sites never touch.",
     outcomeBody: [
-      "Legacy Import is a live business — a French-language site for a real client importing Porsches, Maseratis, and other vehicles from Japanese and Korean auctions into Belgium. Built in 2022 and still an active engagement two years on: ongoing debugging, fixes, and feature changes as the business's needs evolve. The standout feature is a genuine import cost simulator that computes the full landed cost: Japan auction fees by bid tier, offshore invoice, commission, Belgian customs duties, port fees at Antwerp, VAT, transport, and homologation — real business logic, not a template checkout.",
+      "Legacy Import is a live business — a French-language site for a real client importing Porsches, Maseratis, and other vehicles from Japanese and Korean auctions into Belgium. Built in 2022 and still an active engagement two years on: ongoing debugging, fixes, and feature changes as the business's needs evolve. The standout feature is a genuine import cost simulator that computes the full landed cost: Japan auction fees by bid tier, offshore invoice, commission, Belgian customs duties, port fees at Antwerp, VAT, transport, and homologation — real business logic that a template checkout would never model.",
       "Beyond the marketing site, a separate Python bot was built for this client: it pulls auction photos and listing data from Telegram and publishes them straight to Firebase and the website, replacing a manual process of double-posting every listing by hand. That automation saves the client roughly 2 hours a day.",
     ],
     features: [

@@ -20,8 +20,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-body text-muted">
-              Full-stack web developer. From idea to live product — design,
-              build, launch, and stay.
+              Full-stack web developer based in Kenitra, Morocco. I build the
+              whole thing, then stick around after launch.
             </p>
             <a
               href={site.gmailCompose}

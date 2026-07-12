@@ -2,7 +2,7 @@ export const site = {
   name: "Achraf Es-Soussy",
   title: "Achraf Es-Soussy — Full-Stack Web Developer",
   description:
-    "Fixed-price web platforms for real estate agents, vehicle dealers, and founders who need an MVP that actually ships. Built solo, start to finish.",
+    "Fixed-price web platforms, built solo start to finish, for real estate agents, vehicle dealers, and founders who need an MVP that ships.",
   url: "https://portfolio-v2-rho-bay.vercel.app",
   email: "achrafcodes99@gmail.com",
   github: "https://github.com/Achrafcodes",
