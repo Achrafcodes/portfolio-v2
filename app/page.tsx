@@ -152,14 +152,14 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-24 h-24 bg-live/5 blur-2xl rounded-full -mr-8 -mt-8" />
               <div>
                 <p className="font-mono text-[10px] text-live uppercase tracking-widest mb-6">
-                  Vitals
+                  Lighthouse
                 </p>
                 <div className="text-stat text-live" style={display}>
                   95+
                 </div>
               </div>
               <p className="font-mono text-[10px] leading-relaxed text-muted mt-8 uppercase tracking-wider opacity-90">
-                Google PageSpeed optimization for maximum retention.
+                On client builds — scores verified per project.
               </p>
             </div>
 
@@ -359,7 +359,7 @@ export default function Home() {
                   v: "Projects delivered",
                   caption: "4 shown below — the rest are client-owned or under NDA",
                 },
-                { k: "95+", v: "Lighthouse performance" },
+                { k: "95+", v: "Lighthouse on client builds" },
                 { k: "0", v: "Agency layers between us" },
               ].map((s) => (
                 <div key={s.v} className="reveal-fade">
