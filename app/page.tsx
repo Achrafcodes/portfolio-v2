@@ -69,7 +69,7 @@ export default function Home() {
             </div>
 
             <h1
-              className="reveal-blur whitespace-nowrap text-[clamp(30px,6.2vw,80px)] leading-[0.95] tracking-[-0.04em] mb-5"
+              className="reveal-blur whitespace-nowrap text-[clamp(22px,4.4vw,58px)] leading-[0.95] tracking-[-0.04em] mb-4 text-muted"
               style={display}
             >
               Achraf Es-Soussy
