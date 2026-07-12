@@ -73,13 +73,13 @@ export default function Nav() {
 
       {/* Full-screen mobile menu */}
       <div
-        className={`md:hidden fixed inset-0 z-40 bg-canvas flex flex-col transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 z-40 bg-canvas flex flex-col overflow-hidden transition-opacity duration-300 ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         aria-hidden={!open}
       >
         {/* subtle glow */}
-        <div className="absolute top-[-10%] right-[-20%] w-[70vw] h-[70vw] rounded-full bg-signal/10 blur-[100px] pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-20%] w-[70vw] h-[70vw] max-w-[100vw] rounded-full bg-signal/10 blur-[100px] pointer-events-none" />
         <div className="flex-1 flex flex-col justify-center px-page gap-2">
           {links.map((l, i) => (
             <Link
