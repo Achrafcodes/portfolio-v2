@@ -85,7 +85,10 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                e.currentTarget.blur();
+                setOpen(false);
+              }}
               className={`py-3 text-[40px] font-bold tracking-tight text-ink hover:text-signal transition-all duration-500 ${
                 open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
               }`}
@@ -99,7 +102,10 @@ export default function Nav() {
             href={site.gmailCompose}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
+            onClick={(e) => {
+              e.currentTarget.blur();
+              setOpen(false);
+            }}
             className={`mt-8 inline-flex w-fit items-center gap-3 bg-signal text-on-signal px-8 py-4 font-mono text-[12px] rounded-full font-bold tracking-widest uppercase transition-all duration-500 ${
               open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
             }`}
