@@ -164,29 +164,47 @@ section[id] {
     filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--reveal-delay, 0ms);
 }
+/* CSS-only rescue: if JS never marks an element .active (slow hydration,
+   a script error, an observer miss), this animation forces it to its
+   final visible state after a short grace period. The site can never be
+   left permanently blank by the reveal system. Adding .active cancels
+   the pending animation and hands control back to the transition. */
+@keyframes reveal-rescue {
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
 .reveals-on .reveal-up:not(.active) {
   opacity: 0;
   transform: translateY(32px);
+  animation: reveal-rescue 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
 }
 .reveals-on .reveal-fade:not(.active) {
   opacity: 0;
+  animation: reveal-rescue 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
 }
 .reveals-on .reveal-scale:not(.active) {
   opacity: 0;
   transform: translateY(16px) scale(0.95);
+  animation: reveal-rescue 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
 }
 .reveals-on .reveal-blur:not(.active) {
   opacity: 0;
   transform: translateY(24px);
   filter: blur(10px);
+  animation: reveal-rescue 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
 }
 .reveals-on .reveal-left:not(.active) {
   opacity: 0;
   transform: translateX(-40px);
+  animation: reveal-rescue 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
 }
 .reveals-on .reveal-right:not(.active) {
   opacity: 0;
   transform: translateX(40px);
+  animation: reveal-rescue 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2s forwards;
 }
 
 /* Mockup presentation stage — static, no hover motion */
@@ -209,6 +227,7 @@ section[id] {
     transform: none;
     filter: none;
     transition: none;
+    animation: none;
   }
   .mock-tilt,
   .mock-tilt-r {
