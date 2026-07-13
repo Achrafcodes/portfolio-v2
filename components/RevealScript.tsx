@@ -35,17 +35,18 @@ export default function RevealScript() {
       observer.observe(el);
     });
 
-    // Fallback safety net: a same-page anchor navigation (e.g. the mobile
-    // menu linking to /#about on a different route) triggers a hash-jump
-    // scroll whose timing relative to this effect isn't guaranteed —
-    // sometimes it lands before the IntersectionObserver's first check,
-    // sometimes after, depending on how the route transition completes.
-    // If the observer's first check happens to miss the post-jump scroll
-    // position, those elements would otherwise stay opacity:0 forever
-    // since nothing else changes to re-trigger it. This does one manual,
-    // geometry-based pass shortly after mount and activates anything
-    // already on screen, independent of the observer's own timing.
+    // Safety net: landing on a page already scrolled to an anchor (mobile
+    // menu -> /#about, a direct link to a hash URL, etc.) races a native
+    // browser scroll-to-fragment jump against this effect's setup. That
+    // jump isn't a single predictable event -- it can happen before
+    // hydration, after, or get re-applied once fonts/images finish
+    // loading and shift the layout. A one-time delayed check can miss it
+    // either way. Instead, re-run a plain geometry check on every scroll
+    // (rAF-throttled) and once on window 'load', so it's impossible to
+    // miss regardless of what triggered the scroll or when.
+    let ticking = false;
     const sweep = () => {
+      ticking = false;
       document.querySelectorAll(SELECTOR).forEach((el) => {
         if (el.classList.contains("active")) return;
         const r = el.getBoundingClientRect();
@@ -55,10 +56,19 @@ export default function RevealScript() {
         }
       });
     };
-    const sweepTimer = setTimeout(sweep, 350);
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(sweep);
+    };
+
+    sweep();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("load", sweep);
 
     return () => {
-      clearTimeout(sweepTimer);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("load", sweep);
       observer.disconnect();
     };
   }, [pathname]);
