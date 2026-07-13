@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Syne, Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import RevealScript from "@/components/RevealScript";
@@ -121,6 +122,7 @@ export default function RootLayout({
         <main id="main" className="relative z-10 pt-28 md:pt-36">{children}</main>
         <Footer />
         <RevealScript />
+        <Analytics />
       </body>
     </html>
   );
