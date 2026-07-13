@@ -30,7 +30,7 @@ export const projects: Project[] = [
       "Personal finance SaaS — upload a bank statement, get spending broken down automatically, with budgets and exportable reports.",
     outcomeHeadline: "A financial dashboard engineered for exactness.",
     outcomeBody: [
-      "Reckon is Achraf's own SaaS product, built solo from design through security audit. It parses CSV, Excel, or PDF bank statements, auto-categorizes transactions into 14 keyword-matched categories, and dedupes on re-upload so nothing gets double-counted.",
+      "Reckon is my own SaaS product, built solo from design through security audit. It parses CSV, Excel, or PDF bank statements, auto-categorizes transactions into 14 keyword-matched categories, and dedupes on re-upload so nothing gets double-counted.",
       "Money is stored as MongoDB Decimal128, never a float, so currency math is exact to the cent. Every data fetch happens server-side through React Server Components — zero useEffect fetching.",
     ],
     features: [
@@ -132,8 +132,8 @@ export const projects: Project[] = [
     slug: "raqib",
     number: "PROJECT 03",
     name: "RAQIB CRM",
-    tagline: "A freelancer CRM built for Achraf's own client management. \"Keep an eye on your business.\"",
-    outcomeHeadline: "Built from Achraf's own client workload: real invoices, real reminders, real deadlines.",
+    tagline: "A freelancer CRM I built for my own client management. \"Keep an eye on your business.\"",
+    outcomeHeadline: "Built from my own client workload: real invoices, real reminders, real deadlines.",
     outcomeBody: [
       "Raqib handles full CRUD on clients, projects, invoices, and reminders, with a dashboard showing real-time stats, an earnings chart, and pipeline breakdown. It generates invoice PDFs and emails them with attachments automatically.",
       "A daily automated digest sends upcoming reminders and overdue invoices. Security hygiene is applied even at personal scale: CORS whitelist, Helmet, rate limiting, input validation, and a JWT secret guard that fails startup if misconfigured.",
